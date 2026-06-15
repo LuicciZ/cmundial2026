@@ -57,19 +57,14 @@
   .dot{width:10px;height:10px;border-radius:50%}
   .fl{font-size:1rem;margin-right:5px}
 
-  .thirds{background:#fff;border:1px solid var(--hueso2);border-radius:14px;padding:6px 4px}
-  .thirds .row{display:flex;align-items:center;gap:8px;padding:8px 10px;border-top:1px solid var(--hueso2);font-size:.88rem}
-  .thirds .row:first-child{border-top:none}
-  .thirds .row.qual{background:rgba(0,158,90,.07)}
-  .thirds .rk{width:20px;flex:none;font-weight:800;color:var(--gris)}
-  .thirds .nm{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .thirds .gp{flex:none;font-size:.7rem;color:var(--gris);white-space:nowrap}
-  .thirds .stats{margin-left:auto;flex:none;display:flex;align-items:center;gap:12px;font-variant-numeric:tabular-nums}
-  .thirds .st{font-size:.7rem;color:var(--gris);white-space:nowrap}
-  .thirds .st b{color:var(--tinta);font-weight:700}
-  .thirds .pts{font-weight:800;min-width:30px;text-align:right}
-  .thirds .pts small{font-weight:600;color:var(--gris);font-size:.66rem}
-  @media(max-width:430px){.thirds .gp{display:none}.thirds .stats{gap:9px}}
+  /* Tabla de mejores terceros (mismo aspecto que las de grupo) */
+  #thirds .gcard{overflow:hidden}
+  #thirds td.eq{max-width:none}
+  #thirds .tcell{display:flex;align-items:center;gap:5px;min-width:0}
+  #thirds .tname{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #thirds .gtag{flex:none;color:var(--gris);font-weight:600;font-size:.82em}
+  #thirds tr.qual{background:rgba(0,158,90,.07)}
+  #thirds tr.qual .pos{background:var(--verde)}
 
   .round{margin-bottom:8px}
   .round h3{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;font-size:1.05rem;letter-spacing:.03em;color:var(--azul);margin:18px 0 8px}
@@ -113,7 +108,7 @@
   </div>
 
   <h2>Mejores terceros</h2>
-  <div id="thirds" class="thirds"></div>
+  <div id="thirds"></div>
   <p class="note" id="thirdsnote"></p>
 
   <h2>Cuadro final</h2>
@@ -243,19 +238,22 @@ function renderGroups(){
   document.getElementById('groups').innerHTML=html;
 }
 function renderThirds(){
-  const done=GROUPS.filter(groupComplete);
-  const thirds=done.map(g=>({...standings[g][2],g}))
+  const completos=GROUPS.filter(groupComplete).length;
+  // 3º actual de cada uno de los 12 grupos, enfrentados entre sí (en vivo)
+  const thirds=GROUPS.map(g=>({...standings[g][2],grp:g}))
     .sort((a,b)=>b.pts-a.pts||b.dg-a.dg||b.gf-a.gf||a.team.localeCompare(b.team));
-  const el=document.getElementById('thirds');
-  if(thirds.length===0){el.innerHTML='<div class="row" style="color:var(--gris)">Aún no hay grupos terminados.</div>';
-    document.getElementById('thirdsnote').textContent='Cuando vayan acabando los grupos, aquí saldrán los terceros ordenados y se marcarán los 8 que pasan.';return;}
-  el.innerHTML=thirds.map((t,i)=>`<div class="row ${i<8?'qual':''}"><span class="rk">${i+1}</span>
-     <span class="fl">${fl(t.team)}</span><span class="nm">${t.team}</span><span class="gp">Gr. ${t.g}</span>
-     <span class="stats"><span class="st">GF <b>${t.gf}</b></span><span class="st">DG <b>${t.dg>0?'+':''}${t.dg}</b></span>
-     <span class="pts">${t.pts}<small> pts</small></span></span></div>`).join('');
-  document.getElementById('thirdsnote').textContent = done.length<12
-    ? `Provisional: faltan grupos por terminar (${done.length}/12). Los 8 primeros (en verde) pasarían a dieciseisavos.`
-    : 'Los 8 primeros (en verde) se clasifican para dieciseisavos como mejores terceros.';
+  const rows=thirds.map((t,i)=>`<tr class="${i<8?'qual':''}">
+    <td><span class="pos">${i+1}</span></td>
+    <td class="eq"><div class="tcell"><span class="fl">${fl(t.team)}</span><span class="tname">${t.team}</span><span class="gtag">· G${t.grp}</span></div></td>
+    <td>${t.pj}</td><td>${t.g}</td><td>${t.e}</td><td>${t.p}</td>
+    <td>${t.gf}</td><td>${t.gc}</td><td class="dg">${t.dg>0?'+':''}${t.dg}</td>
+    <td class="pts">${t.pts}</td></tr>`).join('');
+  document.getElementById('thirds').innerHTML=`<div class="gcard"><table>
+    <thead><tr><th></th><th class="eq">Equipo</th><th>PJ</th><th>PG</th><th>PE</th><th>PP</th><th>GF</th><th>GC</th><th>DG</th><th>Pts</th></tr></thead>
+    <tbody>${rows}</tbody></table></div>`;
+  document.getElementById('thirdsnote').textContent = completos<12
+    ? `Provisional (${completos}/12 grupos terminados): la tabla se reordena según se juegan los partidos. Los 8 primeros (en verde) clasificarían ahora mismo.`
+    : 'Clasificación final de terceros. Los 8 primeros (en verde) pasan a dieciseisavos como mejores terceros.';
 }
 function teamLine(name,placeholder,isWin){
   if(name)return `<div class="t ${isWin?'win':''}"><span class="fl">${fl(name)}</span>${name}</div>`;
