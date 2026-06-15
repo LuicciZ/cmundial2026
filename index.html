@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mundial 2026 · Calendario gratis para tu móvil</title>
+<meta name="description" content="Los 104 partidos del Mundial 2026 en tu calendario, en hora de España. Un toque y listo. Gratis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ===========================================================
+     CONFIG: cambia SOLO la línea de abajo (en el <script> al final)
+     por la URL real de tu .ics una vez lo subas a tu hosting.
+     =========================================================== */
+
+  :root{
+    --hueso:#F6F3EC;       /* base mate del balón */
+    --tinta:#14161B;       /* texto */
+    --rojo:#E5322B;        /* Trionda rojo */
+    --verde:#009E5C;       /* Trionda verde */
+    --azul:#1452CC;        /* Trionda azul */
+    --oro:#C8A032;         /* dorado del trofeo */
+    --hueso-2:#ECE7DA;
+    --sombra:0 18px 50px -18px rgba(20,22,27,.35);
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    font-family:"Inter",system-ui,sans-serif;
+    color:var(--tinta);
+    background:var(--hueso);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+
+  /* fondo a pantalla completa (imagen). El velo mantiene el texto legible:
+     sube el .82 hacia 1 si la foto tapa mucho, bájalo si quieres verla más. */
+  .screen-bg{position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:url("./image/fondo_mundial_2026.png") center/cover no-repeat}
+  .screen-bg::after{content:"";position:absolute;inset:0;background:rgba(246,243,236,.82)}
+
+  /* fondo: tres olas de color muy suaves que cruzan la página */
+  .bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.10}
+  .bg span{position:absolute;left:-20%;right:-20%;height:42vh;border-radius:50%;filter:blur(10px)}
+  .bg .r{top:-14vh;background:radial-gradient(closest-side,var(--rojo),transparent)}
+  .bg .v{top:30vh;background:radial-gradient(closest-side,var(--verde),transparent)}
+  .bg .a{top:72vh;background:radial-gradient(closest-side,var(--azul),transparent)}
+
+  .wrap{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:0 22px 60px}
+
+  /* ---------- HERO ---------- */
+  .emblem{display:block;width:min(58vw,230px);height:auto;margin:20px auto 18px}
+  @media(prefers-reduced-motion:no-preference){
+    .emblem{animation:spin 28s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+  }
+
+  .eyebrow{
+    display:flex;justify-content:center;gap:8px;flex-wrap:wrap;
+    font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--tinta);margin:0 0 14px
+  }
+  .eyebrow b{background:var(--oro);color:#3a2e07;padding:2px 9px;border-radius:999px;letter-spacing:.12em}
+  .eyebrow .dates{background:var(--tinta);color:var(--hueso);padding:2px 9px;border-radius:999px}
+
+  h1{
+    font-family:"Anton",sans-serif;font-weight:400;
+    font-size:clamp(3.3rem,16vw,5.6rem);line-height:.86;
+    text-transform:uppercase;text-align:center;margin:0;letter-spacing:.01em
+  }
+  h1 .ola{
+    display:block;
+    background:linear-gradient(100deg,var(--rojo) 0 33%,var(--verde) 33% 66%,var(--azul) 66% 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent
+  }
+  .lead{
+    text-align:center;font-size:1.06rem;color:#3c4049;
+    max-width:30ch;margin:20px auto 26px;font-weight:500
+  }
+  .lead strong{color:var(--tinta)}
+
+  /* ---------- BOTONES ---------- */
+  .cta{display:flex;flex-direction:column;gap:12px;margin:0 auto;max-width:420px}
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    min-height:58px;border-radius:16px;text-decoration:none;
+    font-weight:700;font-size:1.06rem;border:2px solid transparent;
+    transition:transform .12s ease, box-shadow .2s ease, background .2s
+  }
+  .btn:active{transform:translateY(1px) scale(.997)}
+  .btn-apple{background:var(--tinta);color:var(--hueso);box-shadow:var(--sombra)}
+  .btn-apple:hover{background:#000}
+  .btn-google{background:var(--hueso);color:var(--tinta);border-color:var(--tinta)}
+  .btn-google:hover{background:var(--hueso-2)}
+  /* Botón secundario hacia la página de clasificación/cuadro */
+  .tabla-cta{max-width:420px;margin:22px auto 0}
+  .btn-tabla{position:relative;overflow:hidden;background:#fff;color:var(--tinta);border:2px solid var(--tinta)}
+  .btn-tabla:hover{background:var(--hueso-2)}
+  .btn-tabla::before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;
+    background:linear-gradient(180deg,var(--rojo) 0 33%,var(--verde) 33% 66%,var(--azul) 66% 100%)}
+  .btn-tabla .stack{padding-left:4px}
+  .btn .ball{font-size:1.2rem}
+  .btn small{display:block;font-weight:500;font-size:.74rem;opacity:.7;margin-top:1px}
+  .btn .stack{display:flex;flex-direction:column;line-height:1.1;text-align:left}
+
+  .copy{
+    background:none;border:none;color:#5a5f69;font:inherit;font-size:.86rem;font-weight:600;
+    cursor:pointer;margin:14px auto 0;display:flex;align-items:center;gap:7px;padding:8px
+  }
+  .copy:hover{color:var(--tinta)}
+  .copy .dot{width:7px;height:7px;border-radius:50%;background:var(--verde)}
+
+  .hint{text-align:center;font-size:.82rem;color:#6a6f78;margin:18px auto 0;max-width:34ch}
+
+  /* ---------- DATOS ---------- */
+  .stats{display:flex;gap:10px;margin:42px 0 8px}
+  .stat{flex:1;background:#fff;border:1px solid var(--hueso-2);border-radius:14px;padding:14px 10px;text-align:center}
+  .stat b{font-family:"Anton",sans-serif;font-weight:400;font-size:1.7rem;display:block;line-height:1}
+  .stat.r b{color:var(--rojo)} .stat.v b{color:var(--verde)} .stat.a b{color:var(--azul)}
+  .stat span{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:#6a6f78;font-weight:600}
+
+  /* ---------- PASOS ---------- */
+  .steps{margin-top:40px}
+  .steps h2{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;
+    font-size:1.5rem;letter-spacing:.02em;margin:0 0 16px}
+  .step{display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-top:1px solid var(--hueso-2)}
+  .step .n{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
+    font-weight:700;font-size:.9rem;color:#fff}
+  .step:nth-child(2) .n{background:var(--rojo)}
+  .step:nth-child(3) .n{background:var(--verde)}
+  .step:nth-child(4) .n{background:var(--azul)}
+  .step p{margin:3px 0 0;font-size:.95rem}
+  .step p b{display:block;margin-bottom:1px}
+
+  footer{margin-top:44px;text-align:center;font-size:.78rem;color:#7a7f88;line-height:1.6}
+  footer .gold{color:var(--oro);font-weight:700}
+
+  .toast{
+    position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);
+    background:var(--tinta);color:var(--hueso);padding:11px 20px;border-radius:999px;
+    font-size:.9rem;font-weight:600;opacity:0;pointer-events:none;transition:.25s;z-index:5
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  :focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body>
+
+<!-- Fondo a pantalla completa. Cambia image/fondo.jpg por tu archivo. -->
+<div class="screen-bg" aria-hidden="true"></div>
+
+<div class="bg" aria-hidden="true"><span class="r"></span><span class="v"></span><span class="a"></span></div>
+
+<main class="wrap">
+
+  <!-- Balón Trionda original (SVG vector, sin imágenes externas). Todo recortado al círculo. Gira con .emblem -->
+  <svg class="emblem" viewBox="0 0 240 240" role="img" aria-label="Balón del Mundial 2026">
+    <defs>
+      <radialGradient id="sphere" cx="38%" cy="30%" r="80%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="62%" stop-color="#F6F3EC"/>
+        <stop offset="100%" stop-color="#E2DBC9"/>
+      </radialGradient>
+      <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#E8CB6C"/>
+        <stop offset="100%" stop-color="#B5901E"/>
+      </linearGradient>
+      <clipPath id="ballClip"><circle cx="120" cy="120" r="110"/></clipPath>
+    </defs>
+
+    <circle cx="120" cy="120" r="110" fill="url(#sphere)"/>
+
+    <g clip-path="url(#ballClip)">
+      <g fill="none" stroke-width="34" stroke-linecap="round">
+        <path d="M120 120 C 148 66, 204 76, 216 132" stroke="#E5322B"/>
+        <g transform="rotate(120 120 120)"><path d="M120 120 C 148 66, 204 76, 216 132" stroke="#009E5C"/></g>
+        <g transform="rotate(240 120 120)"><path d="M120 120 C 148 66, 204 76, 216 132" stroke="#1452CC"/></g>
+      </g>
+      <g fill="none" stroke="#C8A032" stroke-width="1.6" stroke-linecap="round" opacity=".9">
+        <path d="M120 120 C 148 66, 204 76, 216 132"/>
+        <g transform="rotate(120 120 120)"><path d="M120 120 C 148 66, 204 76, 216 132"/></g>
+        <g transform="rotate(240 120 120)"><path d="M120 120 C 148 66, 204 76, 216 132"/></g>
+      </g>
+      <ellipse cx="92" cy="74" rx="50" ry="30" fill="#fff" opacity=".22"/>
+    </g>
+
+    <circle cx="120" cy="120" r="21" fill="#F6F3EC"/>
+    <path d="M120 103 L136 130 L104 130 Z" fill="url(#gold)" stroke="#8f6f17" stroke-width="1.4" stroke-linejoin="round"/>
+    <circle cx="120" cy="121" r="4.4" fill="#fff" opacity=".95"/>
+
+    <circle cx="120" cy="120" r="110" fill="none" stroke="#14161B" stroke-width="2.5"/>
+  </svg>
+
+  <p class="eyebrow"><b>Gratis</b><span class="dates">11 Jun – 19 Jul</span></p>
+
+  <h1>Mundial<span class="ola">2026</span></h1>
+
+  <p class="lead">Los <strong>104 partidos</strong> en tu calendario, en <strong>hora de España</strong>. Un toque y listo.</p>
+
+  <div class="cta">
+    <a class="btn btn-apple" id="apple" href="#">
+      <span class="ball">⚽</span>
+      <span class="stack">Añadir a Apple / Outlook<small>iPhone, iPad, Mac · suscripción</small></span>
+    </a>
+    <a class="btn btn-google" id="google" href="#" target="_blank" rel="noopener">
+      <span class="stack">Añadir a Google Calendar<small>Si da error, ábrelo en el ordenador</small></span>
+    </a>
+  </div>
+
+  <button class="copy" id="copy"><span class="dot"></span>Copiar enlace de suscripción</button>
+
+  <p class="hint">Se actualiza solo: cuando se decidan los cruces de eliminatorias, aparecen en tu calendario sin hacer nada.</p>
+
+  <div class="tabla-cta">
+    <a class="btn btn-tabla" href="clasificacion.html">
+      <span class="ball">📊</span>
+      <span class="stack">Ver clasificación y cuadro<small>Grupos, mejores terceros y eliminatorias en directo</small></span>
+    </a>
+  </div>
+
+  <section class="stats" aria-label="Datos del torneo">
+    <div class="stat r"><b>104</b><span>Partidos</span></div>
+    <div class="stat v"><b>48</b><span>Selecciones</span></div>
+    <div class="stat a"><b>ES</b><span>Hora local</span></div>
+  </section>
+
+  <section class="steps">
+    <h2>Cómo se añade</h2>
+    <div class="step"><span class="n">1</span><p><b>Pulsa tu botón</b>iPhone/Mac → Apple. Android o web → Google (mejor en el PC).</p></div>
+    <div class="step"><span class="n">2</span><p><b>Confirma la suscripción</b>Tu calendario te preguntará si quieres añadirla. Di que sí.</p></div>
+    <div class="step"><span class="n">3</span><p><b>Ya está</b>Los 104 partidos aparecen con hora, rival y estadio. Cero mantenimiento.</p></div>
+  </section>
+
+  <footer>
+    Hecho por fans, para fans. <span class="gold">⚽ Que ruede el balón.</span><br>
+    No afiliado a la FIFA. Horarios orientativos en hora peninsular (CEST).
+  </footer>
+</main>
+
+<div class="toast" id="toast">Enlace copiado ✓</div>
+
+<script>
+  /* ⬇⬇⬇  CAMBIA ESTA URL por la de tu archivo .ics una vez subido  ⬇⬇⬇ */
+  const ICS_URL = "https://cmundial2026.netlify.app/mundial2026.ics";
+  /* ⬆⬆⬆  (deja el resto igual)  ⬆⬆⬆ */
+
+  const webcal = ICS_URL.replace(/^https?:\/\//i, "webcal://");
+  document.getElementById("apple").href = webcal;
+  document.getElementById("google").href =
+    "https://calendar.google.com/calendar/r?cid=" + encodeURIComponent(webcal);
+
+  const toast = document.getElementById("toast");
+  document.getElementById("copy").addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(webcal); }
+    catch (e) {
+      const t = document.createElement("textarea");
+      t.value = webcal; document.body.appendChild(t); t.select();
+      document.execCommand("copy"); t.remove();
+    }
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 1800);
+  });
+</script>
+</body>
+</html>
