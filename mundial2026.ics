@@ -192,7 +192,7 @@ UID:wc2026-g19@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260617T030000
 DTEND;TZID=Europe/Madrid:20260617T050000
-SUMMARY:Grupo J · Argentina 🇦🇷 vs 🇩🇿 Argelia
+SUMMARY:Grupo J · Argentina 🇦🇷 3 vs 1 🇩🇿 Argelia
 LOCATION:Arrowhead Stadium\, Kansas City
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -201,7 +201,7 @@ UID:wc2026-g20@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260617T060000
 DTEND;TZID=Europe/Madrid:20260617T080000
-SUMMARY:Grupo J · Austria 🇦🇹 vs 🇯🇴 Jordania
+SUMMARY:Grupo J · Austria 🇦🇹 3 vs 1 🇯🇴 Jordania
 LOCATION:Levis Stadium\, Santa Clara
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
