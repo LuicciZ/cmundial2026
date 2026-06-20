@@ -291,7 +291,7 @@ UID:wc2026-g30@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260620T000000
 DTEND;TZID=Europe/Madrid:20260620T020000
-SUMMARY:Grupo C · Escocia 🏴󠁧󠁢󠁳󠁣󠁴󠁿 vs 🇲🇦 Marruecos
+SUMMARY:Grupo C · Escocia 🏴󠁧󠁢󠁳󠁣󠁴󠁿 0 vs 1 🇲🇦 Marruecos
 LOCATION:Gillette Stadium\, Foxborough
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -300,7 +300,7 @@ UID:wc2026-g31@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260620T023000
 DTEND;TZID=Europe/Madrid:20260620T043000
-SUMMARY:Grupo C · Brasil 🇧🇷 vs 🇭🇹 Haití
+SUMMARY:Grupo C · Brasil 🇧🇷 3 vs 0 🇭🇹 Haití
 LOCATION:Lincoln Financial Field\, Filadelfia
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -309,7 +309,7 @@ UID:wc2026-g32@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260620T050000
 DTEND;TZID=Europe/Madrid:20260620T070000
-SUMMARY:Grupo D · Turquía 🇹🇷 vs 🇵🇾 Paraguay
+SUMMARY:Grupo D · Turquía 🇹🇷 0 vs 1 🇵🇾 Paraguay
 LOCATION:Levis Stadium\, Santa Clara
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
