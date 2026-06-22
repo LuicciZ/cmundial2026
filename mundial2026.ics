@@ -363,7 +363,7 @@ UID:wc2026-g38@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260621T210000
 DTEND;TZID=Europe/Madrid:20260621T230000
-SUMMARY:Grupo G · Bélgica 🇧🇪 vs 🇮🇷 Irán
+SUMMARY:Grupo G · Bélgica 🇧🇪 0 vs 0 🇮🇷 Irán
 LOCATION:SoFi Stadium\, Inglewood
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -372,7 +372,7 @@ UID:wc2026-g39@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260622T000000
 DTEND;TZID=Europe/Madrid:20260622T020000
-SUMMARY:Grupo H · Uruguay 🇺🇾 vs 🇨🇻 Cabo Verde
+SUMMARY:Grupo H · Uruguay 🇺🇾 2 vs 2 🇨🇻 Cabo Verde
 LOCATION:Hard Rock Stadium\, Miami
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -381,7 +381,7 @@ UID:wc2026-g40@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260622T030000
 DTEND;TZID=Europe/Madrid:20260622T050000
-SUMMARY:Grupo G · Nueva Zelanda 🇳🇿 vs 🇪🇬 Egipto
+SUMMARY:Grupo G · Nueva Zelanda 🇳🇿 1 vs 3 🇪🇬 Egipto
 LOCATION:BC Place\, Vancouver
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
