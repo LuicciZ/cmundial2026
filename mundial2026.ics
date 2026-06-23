@@ -399,7 +399,7 @@ UID:wc2026-g42@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260622T230000
 DTEND;TZID=Europe/Madrid:20260623T010000
-SUMMARY:Grupo I · Francia 🇫🇷 vs 🇮🇶 Irak
+SUMMARY:Grupo I · Francia 🇫🇷 3 vs 0 🇮🇶 Irak
 LOCATION:Lincoln Financial Field\, Filadelfia
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -408,7 +408,7 @@ UID:wc2026-g43@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260623T020000
 DTEND;TZID=Europe/Madrid:20260623T040000
-SUMMARY:Grupo I · Noruega 🇳🇴 vs 🇸🇳 Senegal
+SUMMARY:Grupo I · Noruega 🇳🇴 3 vs 2 🇸🇳 Senegal
 LOCATION:MetLife Stadium\, Nueva Jersey
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -417,7 +417,7 @@ UID:wc2026-g44@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260623T050000
 DTEND;TZID=Europe/Madrid:20260623T070000
-SUMMARY:Grupo J · Jordania 🇯🇴 vs 🇩🇿 Argelia
+SUMMARY:Grupo J · Jordania 🇯🇴 1 vs 2 🇩🇿 Argelia
 LOCATION:Levis Stadium\, Santa Clara
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
