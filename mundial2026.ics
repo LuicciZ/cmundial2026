@@ -462,7 +462,7 @@ UID:wc2026-g49@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260624T210000
 DTEND;TZID=Europe/Madrid:20260624T230000
-SUMMARY:Grupo B · Suiza 🇨🇭 vs 🇨🇦 Canadá
+SUMMARY:Grupo B · Suiza 🇨🇭 2 vs 1 🇨🇦 Canadá
 LOCATION:BC Place\, Vancouver
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -471,7 +471,7 @@ UID:wc2026-g50@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260624T210000
 DTEND;TZID=Europe/Madrid:20260624T230000
-SUMMARY:Grupo B · Bosnia y Herzegovina 🇧🇦 vs 🇶🇦 Catar
+SUMMARY:Grupo B · Bosnia y Herzegovina 🇧🇦 3 vs 1 🇶🇦 Catar
 LOCATION:Lumen Field\, Seattle
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
