@@ -444,7 +444,7 @@ UID:wc2026-g47@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260624T010000
 DTEND;TZID=Europe/Madrid:20260624T030000
-SUMMARY:Grupo L · Panamá 🇵🇦 vs 🇭🇷 Croacia
+SUMMARY:Grupo L · Panamá 🇵🇦 0 vs 1 🇭🇷 Croacia
 LOCATION:BMO Field\, Toronto
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -453,7 +453,7 @@ UID:wc2026-g48@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260624T040000
 DTEND;TZID=Europe/Madrid:20260624T060000
-SUMMARY:Grupo K · Colombia 🇨🇴 vs 🇨🇩 RD Congo
+SUMMARY:Grupo K · Colombia 🇨🇴 1 vs 0 🇨🇩 RD Congo
 LOCATION:Estadio Akron\, Zapopan
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
