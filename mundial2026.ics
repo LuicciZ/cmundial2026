@@ -480,7 +480,7 @@ UID:wc2026-g51@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260625T000000
 DTEND;TZID=Europe/Madrid:20260625T020000
-SUMMARY:Grupo C · Escocia 🏴󠁧󠁢󠁳󠁣󠁴󠁿 vs 🇧🇷 Brasil
+SUMMARY:Grupo C · Escocia 🏴󠁧󠁢󠁳󠁣󠁴󠁿 0 vs 3 🇧🇷 Brasil
 LOCATION:Hard Rock Stadium\, Miami
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -489,7 +489,7 @@ UID:wc2026-g52@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260625T000000
 DTEND;TZID=Europe/Madrid:20260625T020000
-SUMMARY:Grupo C · Marruecos 🇲🇦 vs 🇭🇹 Haití
+SUMMARY:Grupo C · Marruecos 🇲🇦 4 vs 2 🇭🇹 Haití
 LOCATION:Mercedes-Benz Stadium\, Atlanta
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -498,7 +498,7 @@ UID:wc2026-g53@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260625T030000
 DTEND;TZID=Europe/Madrid:20260625T050000
-SUMMARY:Grupo A · Chequia 🇨🇿 vs 🇲🇽 México
+SUMMARY:Grupo A · Chequia 🇨🇿 0 vs 3 🇲🇽 México
 LOCATION:Estadio Azteca\, Ciudad de México
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -507,7 +507,7 @@ UID:wc2026-g54@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260625T030000
 DTEND;TZID=Europe/Madrid:20260625T050000
-SUMMARY:Grupo A · Sudáfrica 🇿🇦 vs 🇰🇷 Corea del Sur
+SUMMARY:Grupo A · Sudáfrica 🇿🇦 1 vs 0 🇰🇷 Corea del Sur
 LOCATION:Estadio BBVA\, Monterrey
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
