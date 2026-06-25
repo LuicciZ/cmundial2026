@@ -74,6 +74,7 @@
   .match .t{display:flex;align-items:center;gap:7px;padding:2px 0;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .match .t.win{font-weight:800}
   .match .t.ph{color:var(--gris);font-style:italic;font-size:.86rem}
+  .match .t.prov{font-style:italic}
   .match .sc{font-weight:800;font-variant-numeric:tabular-nums;text-align:right;min-width:34px}
   .match .mno{font-size:.62rem;color:var(--gris);font-weight:700;writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.05em}
   .pen{font-size:.66rem;color:var(--gris);font-weight:600;margin-left:4px}
@@ -112,6 +113,7 @@
   <p class="note" id="thirdsnote"></p>
 
   <h2>Cuadro final</h2>
+  <p class="note" id="bracketnote" style="display:none"></p>
   <div id="bracket"></div>
   <p class="note">Los cruces con "Mejor 3º" muestran los grupos candidatos. Cuando FIFA publique a qué llave va cada tercero (al cerrarse los grupos), basta con poner la letra del grupo correspondiente en las 8 entradas de <b>ASIGNACION_TERCEROS</b> dentro del código: la página coloca al 3º de ese grupo y avanza el cuadro sola.</p>
 
@@ -255,8 +257,21 @@ function renderThirds(){
     ? `Provisional (${completos}/12 grupos terminados): la tabla se reordena según se juegan los partidos. Los 8 primeros (en verde) clasificarían ahora mismo.`
     : 'Clasificación final de terceros. Los 8 primeros (en verde) pasan a dieciseisavos como mejores terceros.';
 }
-function teamLine(name,placeholder,isWin){
-  if(name)return `<div class="t ${isWin?'win':''}"><span class="fl">${fl(name)}</span>${name}</div>`;
+function groupStarted(g){return FIXTURES.some(f=>f.group===g&&RESULTADOS[f.id]);}
+// Resolución SOLO para mostrar en el cuadro: los slots de grupo (1X/2X) enseñan
+// el equipo provisional (en cursiva) aunque el grupo no haya terminado. Los slots
+// de tercero (3:) y de ganador (W/L) se quedan estrictos (no se adivinan).
+function displaySlot(tok,mid){
+  if(/^[12][A-L]$/.test(tok)){
+    const g=tok[1], idx=+tok[0]-1;
+    if(groupComplete(g))return {name:standings[g][idx].team, prov:false};
+    if(groupStarted(g))return {name:standings[g][idx].team, prov:true};
+    return {name:null, prov:false};
+  }
+  return {name:resolveSlot(tok,mid), prov:false};
+}
+function teamLine(name,placeholder,isWin,prov){
+  if(name)return `<div class="t ${isWin?'win':''} ${prov?'prov':''}"><span class="fl">${fl(name)}</span>${name}</div>`;
   return `<div class="t ph">${placeholder}</div>`;
 }
 function renderBracket(){
@@ -268,17 +283,23 @@ function renderBracket(){
     ms.forEach(k=>{
       const m=k.id.replace('m','');const wl=winnerLoser(m);
       const res=RESULTADOS['m'+m];
+      const H=displaySlot(k.h,m), A=displaySlot(k.a,m);
       const hWin=wl.w&&wl.w===wl.home, aWin=wl.w&&wl.w===wl.away;
       let sc='';
       if(res){let pen=res[2]?`<span class="pen">pen</span>`:''; sc=`<div class="sc">${res[0]}-${res[1]}${pen}</div>`;}
       html+=`<div class="match"><div class="teams">
-        ${teamLine(wl.home,slotLabel(k.h),hWin)}
-        ${teamLine(wl.away,slotLabel(k.a),aWin)}
+        ${teamLine(H.name,slotLabel(k.h),hWin,H.prov)}
+        ${teamLine(A.name,slotLabel(k.a),aWin,A.prov)}
       </div>${sc}<div class="mno">${k.id.toUpperCase()}</div></div>`;
     });
     html+='</div>';
   });
   document.getElementById('bracket').innerHTML=html;
+  const bn=document.getElementById('bracketnote');
+  if(GROUPS.filter(groupComplete).length<12){
+    bn.style.display='';
+    bn.textContent='Cruces provisionales según la clasificación actual (en cursiva): cambiarán hasta que termine la fase de grupos. Los rivales "Mejor 3º" los define la asignación oficial de FIFA al cerrarse los grupos.';
+  } else { bn.style.display='none'; }
 }
 /* ===================== Carga automática desde el .ics ===================== */
 const ICS_URL = 'mundial2026.ics';   // mismo dominio que esta página
