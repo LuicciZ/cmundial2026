@@ -516,7 +516,7 @@ UID:wc2026-g55@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260625T220000
 DTEND;TZID=Europe/Madrid:20260626T000000
-SUMMARY:Grupo E · Curazao 🇨🇼 vs 🇨🇮 Costa de Marfil
+SUMMARY:Grupo E · Curazao 🇨🇼 0 vs 2 🇨🇮 Costa de Marfil
 LOCATION:Lincoln Financial Field\, Filadelfia
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -525,7 +525,7 @@ UID:wc2026-g56@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260625T220000
 DTEND;TZID=Europe/Madrid:20260626T000000
-SUMMARY:Grupo E · Ecuador 🇪🇨 vs 🇩🇪 Alemania
+SUMMARY:Grupo E · Ecuador 🇪🇨 2 vs 1 🇩🇪 Alemania
 LOCATION:MetLife Stadium\, Nueva Jersey
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
