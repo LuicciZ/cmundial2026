@@ -72,6 +72,7 @@
   .match{display:flex;align-items:center;background:#fff;border:1px solid var(--hueso2);border-radius:12px;padding:9px 12px;margin-bottom:8px;gap:8px}
   .match .teams{flex:1;min-width:0}
   .match .t{display:flex;align-items:center;gap:7px;padding:2px 0;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .match .t.fixed{font-weight:700}
   .match .t.win{font-weight:800}
   .match .t.ph{color:var(--gris);font-style:italic;font-size:.86rem}
   .match .t.prov{font-style:italic}
@@ -271,7 +272,7 @@ function displaySlot(tok,mid){
   return {name:resolveSlot(tok,mid), prov:false};
 }
 function teamLine(name,placeholder,isWin,prov){
-  if(name)return `<div class="t ${isWin?'win':''} ${prov?'prov':''}"><span class="fl">${fl(name)}</span>${name}</div>`;
+  if(name)return `<div class="t ${isWin?'win':''} ${prov?'prov':'fixed'}"><span class="fl">${fl(name)}</span>${name}</div>`;
   return `<div class="t ph">${placeholder}</div>`;
 }
 function renderBracket(){
