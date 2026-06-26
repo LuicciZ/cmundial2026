@@ -552,7 +552,7 @@ UID:wc2026-g59@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260626T040000
 DTEND;TZID=Europe/Madrid:20260626T060000
-SUMMARY:Grupo D · Turquía 🇹🇷 vs 🇺🇸 Estados Unidos
+SUMMARY:Grupo D · Turquía 🇹🇷 3 vs 2 🇺🇸 Estados Unidos
 LOCATION:SoFi Stadium\, Inglewood
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -561,7 +561,7 @@ UID:wc2026-g60@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260626T040000
 DTEND;TZID=Europe/Madrid:20260626T060000
-SUMMARY:Grupo D · Paraguay 🇵🇾 vs 🇦🇺 Australia
+SUMMARY:Grupo D · Paraguay 🇵🇾 0 vs 0 🇦🇺 Australia
 LOCATION:Levis Stadium\, Santa Clara
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
