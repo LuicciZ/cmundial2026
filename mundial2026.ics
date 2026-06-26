@@ -534,7 +534,7 @@ UID:wc2026-g57@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260626T010000
 DTEND;TZID=Europe/Madrid:20260626T030000
-SUMMARY:Grupo F · Japón 🇯🇵 vs 🇸🇪 Suecia
+SUMMARY:Grupo F · Japón 🇯🇵 1 vs 1 🇸🇪 Suecia
 LOCATION:AT&T Stadium\, Arlington
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -543,7 +543,7 @@ UID:wc2026-g58@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260626T010000
 DTEND;TZID=Europe/Madrid:20260626T030000
-SUMMARY:Grupo F · Túnez 🇹🇳 vs 🇳🇱 Países Bajos
+SUMMARY:Grupo F · Túnez 🇹🇳 1 vs 3 🇳🇱 Países Bajos
 LOCATION:Arrowhead Stadium\, Kansas City
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
