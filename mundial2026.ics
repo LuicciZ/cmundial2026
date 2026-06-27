@@ -588,7 +588,7 @@ UID:wc2026-g63@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260627T020000
 DTEND;TZID=Europe/Madrid:20260627T040000
-SUMMARY:Grupo H · Cabo Verde 🇨🇻 vs 🇸🇦 Arabia Saudí
+SUMMARY:Grupo H · Cabo Verde 🇨🇻 0 vs 0 🇸🇦 Arabia Saudí
 LOCATION:NRG Stadium\, Houston
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -597,7 +597,7 @@ UID:wc2026-g64@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260627T020000
 DTEND;TZID=Europe/Madrid:20260627T040000
-SUMMARY:Grupo H · Uruguay 🇺🇾 vs 🇪🇸 España
+SUMMARY:Grupo H · Uruguay 🇺🇾 0 vs 1 🇪🇸 España
 LOCATION:Estadio Akron\, Zapopan
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
