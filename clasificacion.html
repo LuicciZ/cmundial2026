@@ -82,6 +82,11 @@
   .match .t.ph{color:var(--gris);font-style:italic;font-size:.86rem}
   .match .t.prov{font-style:italic}
   .match .sc{font-weight:800;font-variant-numeric:tabular-nums;text-align:right;min-width:34px}
+  .match .rgt{display:flex;flex-direction:column;align-items:flex-end;gap:3px}
+  .live{display:inline-flex;align-items:center;gap:4px;font-size:.58rem;font-weight:800;color:var(--rojo);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+  .live .ldot{width:7px;height:7px;border-radius:50%;background:var(--rojo);animation:lpulse 1.2s ease-in-out infinite}
+  @keyframes lpulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
+  @media(prefers-reduced-motion:reduce){.live .ldot{animation:none}}
   .match .mno{font-size:.62rem;color:var(--gris);font-weight:700;writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.05em}
   .pen{font-size:.66rem;color:var(--gris);font-weight:600;margin-left:4px}
   .note{font-size:.8rem;color:var(--gris);background:var(--hueso2);border-radius:10px;padding:10px 12px;margin-top:10px}
@@ -138,6 +143,7 @@
    No hace falta tocar nada de aquí abajo: la tabla se rellena sola al cargar.
    =========================================================================== */
 const RESULTADOS = {};   // se llena automáticamente al leer el .ics
+const TIMES = {};        // horarios (inicio/fin) de cada partido, leídos del .ics
 
 /* OVERRIDE (opcional): si algún resultado del .ics estuviera mal, fuérzalo
    aquí y mandará sobre lo leído. Ejemplos:  m104:[2,2,'A']   ó   g30:[0,0]
@@ -152,14 +158,14 @@ const OVERRIDE = {};
    llave se queda como "Mejor 3º (...)" hasta que sea válida).
    =========================================================================== */
 const ASIGNACION_TERCEROS = {
-  m74: 'D', // 1º E (Alemania)      vs 3º D → Paraguay
-  m77: 'F', // 1º I (Francia)       vs 3º F → Suecia
-  m79: 'E', // 1º A (México)        vs 3º E → Ecuador
-  m80: 'K', // 1º L (Inglaterra)    vs 3º K → RD Congo
-  m82: 'I', // 1º G (Bélgica)       vs 3º I → Senegal
-  m81: 'B', // 1º D (Estados Unidos) vs 3º B → Bosnia
-  m85: 'J', // 1º B (Suiza)         vs 3º J → Argelia
-  m87: 'L', // 1º K (Colombia)      vs 3º L → Ghana
+  m74: null, // 1º E vs 3º del grupo ___  (candidatos: A/B/C/D/F)
+  m77: null, // 1º I vs 3º del grupo ___  (candidatos: C/D/F/G/H)
+  m79: null, // 1º A vs 3º del grupo ___  (candidatos: C/E/F/H/I)
+  m80: null, // 1º L vs 3º del grupo ___  (candidatos: E/H/I/J/K)
+  m82: null, // 1º G vs 3º del grupo ___  (candidatos: A/E/H/I/J)
+  m81: null, // 1º D vs 3º del grupo ___  (candidatos: B/E/F/I/J)
+  m85: null, // 1º B vs 3º del grupo ___  (candidatos: E/F/G/I/J)
+  m87: null, // 1º K vs 3º del grupo ___  (candidatos: D/E/I/J/L)
 };
 
 /* ===================== Motor (no tocar) ===================== */
@@ -293,10 +299,13 @@ function matchHTML(m){
   const H=displaySlot(k.h,m), A=displaySlot(k.a,m);
   const hWin=wl.w&&wl.w===wl.home, aWin=wl.w&&wl.w===wl.away;
   let sc=''; if(res){let pen=res[2]?`<span class="pen">pen</span>`:''; sc=`<div class="sc">${res[0]}-${res[1]}${pen}</div>`;}
+  const live=enDirecto('m'+m);
+  const badge=live?`<span class="live"><i class="ldot"></i>En directo</span>`:'';
+  const rgt=(live||sc)?`<div class="rgt">${badge}${sc}</div>`:'';
   return `<div class="match"><div class="teams">
       ${teamLine(H.name,slotLabel(k.h),hWin,H.prov)}
       ${teamLine(A.name,slotLabel(k.a),aWin,A.prov)}
-    </div>${sc}<div class="mno">M${m}</div></div>`;
+    </div>${rgt}<div class="mno">M${m}</div></div>`;
 }
 function renderBracket(){
   let html='';
@@ -339,8 +348,20 @@ function parseICS(text){
       if(!uid)return;
       const r=parseScore(sum);
       if(r)out[uid]=r;
+      // horarios (para el cartel EN DIRECTO). Todo el torneo es verano → Madrid = UTC+2.
+      const ds=(block.match(/DTSTART[^:]*:(\d{8}T\d{6})/)||[])[1];
+      const de=(block.match(/DTEND[^:]*:(\d{8}T\d{6})/)||[])[1];
+      if(ds)TIMES[uid]={start:madridToMs(ds), end:de?madridToMs(de):madridToMs(ds)+7200000};
     });
   return out;
+}
+function madridToMs(s){ // "20260628T210000" en hora de Madrid (CEST, UTC+2) → epoch ms
+  return Date.UTC(+s.slice(0,4),+s.slice(4,6)-1,+s.slice(6,8),+s.slice(9,11)-2,+s.slice(11,13),0);
+}
+function enDirecto(uid){ // true si AHORA está dentro de la ventana del partido
+  const t=TIMES[uid]; if(!t)return false;
+  const now=Date.now();
+  return now>=t.start && now<t.end;
 }
 
 /* ===================== Render + arranque ===================== */
@@ -352,17 +373,20 @@ function render(){
 function loading(){
   document.getElementById('groups').innerHTML='<p class="note" style="grid-column:1/-1">Cargando resultados…</p>';
 }
+function load(){
+  return fetch(ICS_URL,{cache:'no-store'})
+    .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.text();})
+    .then(txt=>{const sc=parseICS(txt);for(const k in RESULTADOS)delete RESULTADOS[k];Object.assign(RESULTADOS,sc,OVERRIDE);render();});
+}
 function boot(){
   loading();
-  fetch(ICS_URL,{cache:'no-store'})
-    .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.text();})
-    .then(txt=>{Object.assign(RESULTADOS,parseICS(txt),OVERRIDE);render();})
-    .catch(err=>{
+  load().catch(err=>{
       console.warn('No se pudo cargar el calendario:',err);
       Object.assign(RESULTADOS,OVERRIDE);render();
       const n=document.getElementById('thirdsnote');
       if(n)n.textContent='No se pudieron cargar los resultados del calendario. Recarga la página en un momento.';
     });
+  setInterval(()=>{load().catch(()=>{});}, 60000);   // refresca marcadores y el cartel "En directo"
 }
 if(typeof fetch!=='undefined'){boot();}else{render();}
 </script>
