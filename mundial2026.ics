@@ -678,7 +678,7 @@ UID:wc2026-m73@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260628T210000
 DTEND;TZID=Europe/Madrid:20260628T230000
-SUMMARY:Dieciseisavos (M73) · 2º Grupo A vs 2º Grupo B
+SUMMARY:Dieciseisavos (M73) · Sudáfrica 🇿🇦 vs 🇨🇦 Canadá
 LOCATION:SoFi Stadium\, Inglewood
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -687,7 +687,7 @@ UID:wc2026-m76@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260629T190000
 DTEND;TZID=Europe/Madrid:20260629T210000
-SUMMARY:Dieciseisavos (M76) · 1º Grupo C vs 2º Grupo F
+SUMMARY:Dieciseisavos (M76) · Brasil 🇧🇷 vs 🇯🇵 Japón
 LOCATION:NRG Stadium\, Houston
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -696,7 +696,7 @@ UID:wc2026-m74@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260629T223000
 DTEND;TZID=Europe/Madrid:20260630T003000
-SUMMARY:Dieciseisavos (M74) · 1º Grupo E vs Mejor 3º (A/B/C/D/F)
+SUMMARY:Dieciseisavos (M74) · Alemania 🇩🇪 vs 🇵🇾 Paraguay
 LOCATION:Gillette Stadium\, Foxborough
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -705,7 +705,7 @@ UID:wc2026-m75@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260630T030000
 DTEND;TZID=Europe/Madrid:20260630T050000
-SUMMARY:Dieciseisavos (M75) · 1º Grupo F vs 2º Grupo C
+SUMMARY:Dieciseisavos (M75) · Países Bajos 🇳🇱 vs 🇲🇦 Marruecos
 LOCATION:Estadio BBVA\, Monterrey
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -714,7 +714,7 @@ UID:wc2026-m78@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260630T190000
 DTEND;TZID=Europe/Madrid:20260630T210000
-SUMMARY:Dieciseisavos (M78) · 2º Grupo E vs 2º Grupo I
+SUMMARY:Dieciseisavos (M78) · Costa de Marfil 🇨🇮 vs 🇳🇴 Noruega
 LOCATION:AT&T Stadium\, Arlington
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -723,7 +723,7 @@ UID:wc2026-m77@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260630T230000
 DTEND;TZID=Europe/Madrid:20260701T010000
-SUMMARY:Dieciseisavos (M77) · 1º Grupo I vs Mejor 3º (C/D/F/G/H)
+SUMMARY:Dieciseisavos (M77) · Francia 🇫🇷 vs 🇸🇪 Suecia
 LOCATION:MetLife Stadium\, Nueva Jersey
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -732,7 +732,7 @@ UID:wc2026-m79@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260701T030000
 DTEND;TZID=Europe/Madrid:20260701T050000
-SUMMARY:Dieciseisavos (M79) · 1º Grupo A vs Mejor 3º (C/E/F/H/I)
+SUMMARY:Dieciseisavos (M79) · México 🇲🇽 vs 🇪🇨 Ecuador
 LOCATION:Estadio Azteca\, Ciudad de México
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -741,7 +741,7 @@ UID:wc2026-m80@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260701T180000
 DTEND;TZID=Europe/Madrid:20260701T200000
-SUMMARY:Dieciseisavos (M80) · 1º Grupo L vs Mejor 3º (E/H/I/J/K)
+SUMMARY:Dieciseisavos (M80) · Inglaterra 🏴󠁧󠁢󠁥󠁮󠁧󠁿 vs 🇨🇩 RD Congo
 LOCATION:Mercedes-Benz Stadium\, Atlanta
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -750,7 +750,7 @@ UID:wc2026-m82@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260701T220000
 DTEND;TZID=Europe/Madrid:20260702T000000
-SUMMARY:Dieciseisavos (M82) · 1º Grupo G vs Mejor 3º (A/E/H/I/J)
+SUMMARY:Dieciseisavos (M82) · Bélgica 🇧🇪 vs 🇸🇳 Senegal
 LOCATION:Lumen Field\, Seattle
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -759,7 +759,7 @@ UID:wc2026-m81@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260702T020000
 DTEND;TZID=Europe/Madrid:20260702T040000
-SUMMARY:Dieciseisavos (M81) · 1º Grupo D vs Mejor 3º (B/E/F/I/J)
+SUMMARY:Dieciseisavos (M81) · Estados Unidos 🇺🇸 vs 🇧🇦 Bosnia y Herzegovina
 LOCATION:Levis Stadium\, Santa Clara
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -768,7 +768,7 @@ UID:wc2026-m84@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260702T210000
 DTEND;TZID=Europe/Madrid:20260702T230000
-SUMMARY:Dieciseisavos (M84) · 1º Grupo H vs 2º Grupo J
+SUMMARY:Dieciseisavos (M84) · España 🇪🇸 vs 🇦🇹 Austria
 LOCATION:SoFi Stadium\, Inglewood
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -777,7 +777,7 @@ UID:wc2026-m83@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260703T010000
 DTEND;TZID=Europe/Madrid:20260703T030000
-SUMMARY:Dieciseisavos (M83) · 2º Grupo K vs 2º Grupo L
+SUMMARY:Dieciseisavos (M83) · Portugal 🇵🇹 vs 🇭🇷 Croacia
 LOCATION:BMO Field\, Toronto
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -786,7 +786,7 @@ UID:wc2026-m85@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260703T050000
 DTEND;TZID=Europe/Madrid:20260703T070000
-SUMMARY:Dieciseisavos (M85) · 1º Grupo B vs Mejor 3º (E/F/G/I/J)
+SUMMARY:Dieciseisavos (M85) · Suiza 🇨🇭 vs 🇩🇿 Argelia
 LOCATION:BC Place\, Vancouver
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -795,7 +795,7 @@ UID:wc2026-m88@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260703T200000
 DTEND;TZID=Europe/Madrid:20260703T220000
-SUMMARY:Dieciseisavos (M88) · 2º Grupo D vs 2º Grupo G
+SUMMARY:Dieciseisavos (M88) · Australia 🇦🇺 vs 🇪🇬 Egipto
 LOCATION:AT&T Stadium\, Arlington
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -804,7 +804,7 @@ UID:wc2026-m86@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260704T000000
 DTEND;TZID=Europe/Madrid:20260704T020000
-SUMMARY:Dieciseisavos (M86) · 1º Grupo J vs 2º Grupo H
+SUMMARY:Dieciseisavos (M86) · Argentina 🇦🇷 vs 🇨🇻 Cabo Verde
 LOCATION:Hard Rock Stadium\, Miami
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -813,7 +813,7 @@ UID:wc2026-m87@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260704T033000
 DTEND;TZID=Europe/Madrid:20260704T053000
-SUMMARY:Dieciseisavos (M87) · 1º Grupo K vs Mejor 3º (D/E/I/J/L)
+SUMMARY:Dieciseisavos (M87) · Colombia 🇨🇴 vs 🇬🇭 Ghana
 LOCATION:Arrowhead Stadium\, Kansas City
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
