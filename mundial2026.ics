@@ -678,7 +678,7 @@ UID:wc2026-m73@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260628T210000
 DTEND;TZID=Europe/Madrid:20260628T230000
-SUMMARY:Dieciseisavos (M73) · Sudáfrica 🇿🇦 vs 🇨🇦 Canadá
+SUMMARY:Dieciseisavos (M73) · Sudáfrica 🇿🇦 0 vs 1 🇨🇦 Canadá
 LOCATION:SoFi Stadium\, Inglewood
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -687,7 +687,7 @@ UID:wc2026-m76@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260629T190000
 DTEND;TZID=Europe/Madrid:20260629T210000
-SUMMARY:Dieciseisavos (M76) · Brasil 🇧🇷 vs 🇯🇵 Japón
+SUMMARY:Dieciseisavos (M76) · Brasil 🇧🇷 0 vs 1 🇯🇵 Japón
 LOCATION:NRG Stadium\, Houston
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
