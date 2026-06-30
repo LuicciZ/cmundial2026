@@ -81,8 +81,8 @@
   .match .t.win{font-weight:800}
   .match .t.ph{color:var(--gris);font-style:italic;font-size:.86rem}
   .match .t.prov{font-style:italic}
-  .match .sc{font-weight:800;font-variant-numeric:tabular-nums;text-align:right;min-width:34px}
-  .match .rgt{display:flex;flex-direction:column;align-items:flex-end;gap:3px}
+  .match .scol{display:flex;flex-direction:column;align-items:flex-end;min-width:30px}
+  .match .gl{padding:2px 0;font-size:.95rem;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
   .live{display:inline-flex;align-items:center;gap:4px;font-size:.58rem;font-weight:800;color:var(--rojo);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
   .live .ldot{width:7px;height:7px;border-radius:50%;background:var(--rojo);animation:lpulse 1.2s ease-in-out infinite}
   @keyframes lpulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
@@ -158,14 +158,14 @@ const OVERRIDE = {};
    llave se queda como "Mejor 3º (...)" hasta que sea válida).
    =========================================================================== */
 const ASIGNACION_TERCEROS = {
-  m74: 'D', // 1º E (Alemania)      vs 3º D → Paraguay
-  m77: 'F', // 1º I (Francia)       vs 3º F → Suecia
-  m79: 'E', // 1º A (México)        vs 3º E → Ecuador
-  m80: 'K', // 1º L (Inglaterra)    vs 3º K → RD Congo
-  m82: 'I', // 1º G (Bélgica)       vs 3º I → Senegal
-  m81: 'B', // 1º D (Estados Unidos) vs 3º B → Bosnia
-  m85: 'J', // 1º B (Suiza)         vs 3º J → Argelia
-  m87: 'L', // 1º K (Colombia)      vs 3º L → Ghana
+  m74: null, // 1º E vs 3º del grupo ___  (candidatos: A/B/C/D/F)
+  m77: null, // 1º I vs 3º del grupo ___  (candidatos: C/D/F/G/H)
+  m79: null, // 1º A vs 3º del grupo ___  (candidatos: C/E/F/H/I)
+  m80: null, // 1º L vs 3º del grupo ___  (candidatos: E/H/I/J/K)
+  m82: null, // 1º G vs 3º del grupo ___  (candidatos: A/E/H/I/J)
+  m81: null, // 1º D vs 3º del grupo ___  (candidatos: B/E/F/I/J)
+  m85: null, // 1º B vs 3º del grupo ___  (candidatos: E/F/G/I/J)
+  m87: null, // 1º K vs 3º del grupo ___  (candidatos: D/E/I/J/L)
 };
 
 /* ===================== Motor (no tocar) ===================== */
@@ -298,23 +298,19 @@ function matchHTML(m){
   const k=KOmap[m]; const wl=winnerLoser(m); const res=RESULTADOS['m'+m];
   const H=displaySlot(k.h,m), A=displaySlot(k.a,m);
   const hWin=wl.w&&wl.w===wl.home, aWin=wl.w&&wl.w===wl.away;
-  let sc='';
+  // Marcador vertical: cada número en la fila de su equipo. (3)/(4) = penaltis.
+  let scol='';
   if(res){
-    if(res[2]&&res[3]!=null){            // penaltis: 1(3) - 1(4)
-      sc=`<div class="sc">${res[0]}<span class="pen">(${res[3]})</span> - ${res[1]}<span class="pen">(${res[4]})</span></div>`;
-    } else if(res[2]){                    // penaltis antiguos sin números (compatibilidad)
-      sc=`<div class="sc">${res[0]}-${res[1]}<span class="pen">pen</span></div>`;
-    } else {                              // partido normal: 1-1
-      sc=`<div class="sc">${res[0]}-${res[1]}</div>`;
-    }
+    const cell=(g,p)=>`<div class="gl">${g}${p!=null?`<span class="pen">(${p})</span>`:''}</div>`;
+    const hp=res[2]?res[3]:null, ap=res[2]?res[4]:null;
+    scol=`<div class="scol">${cell(res[0],hp)}${cell(res[1],ap)}</div>`;
   }
   const live=enDirecto('m'+m);
   const badge=live?`<span class="live"><i class="ldot"></i>En directo</span>`:'';
-  const rgt=(live||sc)?`<div class="rgt">${badge}${sc}</div>`:'';
   return `<div class="match"><div class="teams">
       ${teamLine(H.name,slotLabel(k.h),hWin,H.prov)}
       ${teamLine(A.name,slotLabel(k.a),aWin,A.prov)}
-    </div>${rgt}<div class="mno">M${m}</div></div>`;
+    </div>${badge}${scol}<div class="mno">M${m}</div></div>`;
 }
 function renderBracket(){
   let html='';
@@ -369,8 +365,15 @@ function madridToMs(s){ // "20260628T210000" en hora de Madrid (CEST, UTC+2) →
 }
 function enDirecto(uid){ // true si AHORA está dentro de la ventana del partido
   const t=TIMES[uid]; if(!t)return false;
+  let end=t.end;
+  // Solo eliminatorias: si el marcador metido está en empate y sin resolver por penaltis,
+  // ampliamos la ventana: +30' de prórroga y, si sigue empate, +20' para la tanda (~2h50 máx).
+  if(uid[0]==='m'){
+    const r=RESULTADOS[uid];
+    if(r && r[0]===r[1] && !r[2]) end=t.end+50*60000;
+  }
   const now=Date.now();
-  return now>=t.start && now<t.end;
+  return now>=t.start && now<end;
 }
 
 /* ===================== Render + arranque ===================== */
