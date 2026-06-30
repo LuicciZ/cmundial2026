@@ -696,7 +696,7 @@ UID:wc2026-m74@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260629T223000
 DTEND;TZID=Europe/Madrid:20260630T003000
-SUMMARY:Dieciseisavos (M74) · Alemania 🇩🇪 1 vs 1 🇵🇾 Paraguay
+SUMMARY:Dieciseisavos (M74) · Alemania 🇩🇪 1(3) vs 1(4) 🇵🇾 Paraguay
 LOCATION:Gillette Stadium\, Foxborough
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -705,7 +705,7 @@ UID:wc2026-m75@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260630T030000
 DTEND;TZID=Europe/Madrid:20260630T050000
-SUMMARY:Dieciseisavos (M75) · Países Bajos 🇳🇱 vs 🇲🇦 Marruecos
+SUMMARY:Dieciseisavos (M75) · Países Bajos 🇳🇱 0 vs 0 🇲🇦 Marruecos
 LOCATION:Estadio BBVA\, Monterrey
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
