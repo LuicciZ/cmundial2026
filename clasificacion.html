@@ -331,7 +331,7 @@ function renderBracket(){
   } else { bn.style.display='none'; }
 }
 /* ===================== Carga automática desde el .ics ===================== */
-const ICS_URL = 'mundial2026.ics';   // mismo dominio que esta página
+const ICS_URL = 'https://raw.githubusercontent.com/LuicciZ/cmundial2026/main/mundial2026.ics';   // se lee directo de GitHub: los marcadores salen al guardar, sin esperar a Cloudflare
 
 // Saca [local, visitante] o [local, visitante, 'H'/'A'] (penaltis) de un SUMMARY.
 // Reglas: "2 vs 1" normal · "2(4) vs 2(2)" penaltis · "vs" sin número = no jugado.
@@ -386,7 +386,7 @@ function loading(){
   document.getElementById('groups').innerHTML='<p class="note" style="grid-column:1/-1">Cargando resultados…</p>';
 }
 function load(){
-  return fetch(ICS_URL,{cache:'no-store'})
+  return fetch(ICS_URL+'?t='+Date.now(),{cache:'no-store'})
     .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.text();})
     .then(txt=>{const sc=parseICS(txt);for(const k in RESULTADOS)delete RESULTADOS[k];Object.assign(RESULTADOS,sc,OVERRIDE);render();});
 }
