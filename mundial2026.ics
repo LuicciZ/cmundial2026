@@ -804,7 +804,7 @@ UID:wc2026-m86@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260704T000000
 DTEND;TZID=Europe/Madrid:20260704T020000
-SUMMARY:Dieciseisavos (M86) · Argentina 🇦🇷 vs 🇨🇻 Cabo Verde
+SUMMARY:Dieciseisavos (M86) · Argentina 🇦🇷 3 vs 2 🇨🇻 Cabo Verde
 LOCATION:Hard Rock Stadium\, Miami
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -813,7 +813,7 @@ UID:wc2026-m87@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260704T033000
 DTEND;TZID=Europe/Madrid:20260704T053000
-SUMMARY:Dieciseisavos (M87) · Colombia 🇨🇴 vs 🇬🇭 Ghana
+SUMMARY:Dieciseisavos (M87) · Colombia 🇨🇴 1 vs 0 🇬🇭 Ghana
 LOCATION:Arrowhead Stadium\, Kansas City
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
