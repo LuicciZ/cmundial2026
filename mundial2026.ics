@@ -822,7 +822,7 @@ UID:wc2026-m90@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260704T190000
 DTEND;TZID=Europe/Madrid:20260704T210000
-SUMMARY:Octavos (M90) · Canadá 🇨🇦 0 vs 2 🇲🇦 Marruecos
+SUMMARY:Octavos (M90) · Canadá 🇨🇦 0 vs 3 🇲🇦 Marruecos
 LOCATION:NRG Stadium\, Houston
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -831,7 +831,7 @@ UID:wc2026-m89@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260704T230000
 DTEND;TZID=Europe/Madrid:20260705T010000
-SUMMARY:Octavos (M89) · Paraguay 🇵🇾 vs 🇫🇷 Francia
+SUMMARY:Octavos (M89) · Paraguay 🇵🇾 0 vs 1 🇫🇷 Francia
 LOCATION:Lincoln Financial Field\, Filadelfia
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
