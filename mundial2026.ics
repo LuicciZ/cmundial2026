@@ -840,7 +840,7 @@ UID:wc2026-m91@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260705T220000
 DTEND;TZID=Europe/Madrid:20260706T000000
-SUMMARY:Octavos (M91) · Brasil 🇧🇷 vs 🇳🇴 Noruega
+SUMMARY:Octavos (M91) · Brasil 🇧🇷 1 vs 2 🇳🇴 Noruega
 LOCATION:MetLife Stadium\, Nueva Jersey
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -849,7 +849,7 @@ UID:wc2026-m92@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260706T020000
 DTEND;TZID=Europe/Madrid:20260706T040000
-SUMMARY:Octavos (M92) · México 🇲🇽 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra
+SUMMARY:Octavos (M92) · México 🇲🇽 0 vs 2 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra
 LOCATION:Estadio Azteca\, Ciudad de México
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
