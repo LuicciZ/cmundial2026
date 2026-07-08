@@ -885,7 +885,7 @@ UID:wc2026-m96@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260707T220000
 DTEND;TZID=Europe/Madrid:20260708T000000
-SUMMARY:Octavos (M96) · Suiza 🇨🇭 0 vs 0 🇨🇴 Colombia
+SUMMARY:Octavos (M96) · Suiza 🇨🇭 0 (4) vs (2) 0 🇨🇴 Colombia
 LOCATION:BC Place\, Vancouver
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
@@ -894,7 +894,7 @@ UID:wc2026-m97@mundial2026.ics
 DTSTAMP:20260611T000000Z
 DTSTART;TZID=Europe/Madrid:20260709T220000
 DTEND;TZID=Europe/Madrid:20260710T000000
-SUMMARY:Cuartos (M97) · Ganador M89 vs Ganador M90
+SUMMARY:Cuartos (M97) · Francia 🇫🇷 vs 🇲🇦 Marruecos
 LOCATION:Gillette Stadium\, Foxborough
 DESCRIPTION:Mundial 2026 · Horario en hora de Madrid (CEST).
 END:VEVENT
